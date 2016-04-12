@@ -13,7 +13,17 @@ public class Main {
 
     public void test(AbstractService service){
         List<Long> list = service.getListOfLongs();
+        /**
+         * This does not work. Javac complains that the reaquired type is Object, even though getListOfLongs returns List<Long>
+         */
         for(Long l :  service.getListOfLongs()){
+
+        }
+
+        /**
+         * This on the other hands works ..
+         */
+        for(Long l :  list){
 
         }
     }
